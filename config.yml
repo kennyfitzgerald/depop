@@ -1,0 +1,46 @@
+# Used to define search queries for Depop 
+
+searches:
+
+    carhartt_chase:
+      q_params:
+        what: Carhartt Chase
+        sizes: [
+          # 2-52.1, # size,mens,tops,uk,one_size
+          # 2-52.2, # size,mens,tops,uk,XXS
+          # 2-52.3, # size,mens,tops,uk,S
+          # 2-52.4, # size,mens,tops,uk,M
+          # 2-52.5, # size,mens,tops,uk,L
+          # 2-52.6, # size,mens,tops,uk,XL
+          2-52.7, # size,mens,tops,uk,XXL
+          # 2-52.8, # size,mens,tops,uk,other
+          # 2-52.9, # size,mens,tops,uk,XXS
+          2-52.10, # size,mens,tops,uk,XXXL
+          2-52.11, # size,mens,tops,uk,XXXXL
+          # 2-54.1, # size,mens,tops,us,one_size
+          # 2-54.2, # size,mens,tops,us,XXS
+          # 2-54.3, # size,mens,tops,us,S
+          # 2-54.4, # size,mens,tops,us,M
+          # 2-54.5, # size,mens,tops,us,L
+          # 2-54.6, # size,mens,tops,us,XL
+          # 2-54.7, # size,mens,tops,us,XXL
+          # 2-54.8, # size,mens,tops,us,other
+          # 2-54.9, # size,mens,tops,us,XXS
+          # 2-54.10, # size,mens,tops,us,XXXL
+          # 2-54.11, # size,mens,tops,us,XXXXL
+          # 2-56.1, # size,mens,tops,eu,one_size
+          # 2-56.2, # size,mens,tops,eu,XXS
+          # 2-56.3, # size,mens,tops,eu,S
+          # 2-56.4, # size,mens,tops,eu,M
+          # 2-56.5, # size,mens,tops,eu,L
+          # 2-56.6, # size,mens,tops,eu,XL
+          # 2-56.7, # size,mens,tops,eu,XXL
+          # 2-56.8, # size,mens,tops,eu,other
+          # 2-56.9, # size,mens,tops,eu,XXS
+          # 2-56.10, # size,mens,tops,eu,XXXL
+          # 2-56.11, # size,mens,tops,eu,XXXXL
+        ]
+        sort: newlyListed
+      df_filters:
+        priceMin: 2
+        priceMax: 30
