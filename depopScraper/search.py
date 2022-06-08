@@ -177,10 +177,15 @@ def get_all_query_results(config_filepath, search_ids):
 def log_seen_listings(df):
     """ Takes a dataframe with an 'id' column name and saves the IDs of listings that have been sent out in a text file.
     """
+    filepath = 'data/seen_listings/seen_listings.txt'
 
     seen_listings = list(df['id'])
 
-    textfile = open('data/seen_listings/seen_listings.txt', "w")
+    if not os.path.exists(filepath):
+        with open(filepath, 'w') as fp:
+            pass
+    
+    textfile = open(filepath, "w")
 
     for element in seen_listings:
         textfile.write(str(element) + "\n")
@@ -196,7 +201,6 @@ def read_seen_listings():
     seen_listings = []
 
     if os.path.exists('data/seen_listings/seen_listings.txt'):
-
         with open('data/seen_listings/seen_listings.txt', 'r') as f:
             seen_listings = [int(line.strip()) for line in f]
 
@@ -300,5 +304,5 @@ def run_search(search_ids=None):
         print(f"{results_found} results found. Sending email..")
         send_email('depopScraper/config/emailer_config.yml', df)
 
-        # Log listings sent 
+        # Log listings sent
         log_seen_listings(df)
