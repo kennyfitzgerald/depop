@@ -1,0 +1,38 @@
+name: Run Depop searches
+
+on:
+  schedule:
+    - cron: '0/10 7-23 * * *'
+  workflow_dispatch:
+
+jobs:
+  run_searches:
+    name: Run depop Searches and email results
+    env: 
+      MY_EMAIL: ${{ secrets.MY_EMAIL }}
+      MY_EMAIL_PASSWORD: ${{ secrets.MY_EMAIL_PASSWORD }}
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run searches and update seen listings 
+        run: |
+          python main.py
+      
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add 'data/seen_listings.txt' || true
+          git commit -m "Updated seen listings file" || true
+          git push origin master || true

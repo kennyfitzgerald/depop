@@ -1,0 +1,8 @@
+# Used to email results 
+
+email_config:
+  server: smtp.gmail.com
+  port: 465
+  user: !ENV ${MY_EMAIL}
+  password: !ENV ${MY_EMAIL_PASSWORD}
+  receiver: !ENV ${MY_EMAIL}
