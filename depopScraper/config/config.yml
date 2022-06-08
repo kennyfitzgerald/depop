@@ -1,7 +1,7 @@
 # Used to define search queries for Depop 
 
 carhartt_chase:
- what: Carhartt Chase Hoodie
+ what: Carhartt Chase
  sizes: [
    2-52.6, # size,mens,tops,uk,XL
    2-52.7, # size,mens,tops,uk,XXL
@@ -12,7 +12,7 @@ carhartt_chase:
   max_priceAmount: 40
 
 butter_t_shirt:
- what: Butter T Shirt
+ what: Butter goods
  sizes: [
    # 2-52.1, # size,mens,tops,uk,one_size
    # 2-52.2, # size,mens,tops,uk,XXS
