@@ -33,6 +33,6 @@ jobs:
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add 'data/seen_listings.txt' || true
+          git add 'data/seen_listings/seen_listings.txt' || true
           git commit -m "Updated seen listings file" || true
           git push origin master || true
