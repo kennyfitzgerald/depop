@@ -180,10 +180,6 @@ def log_seen_listings(df):
     filepath = 'data/seen_listings/seen_listings.txt'
 
     seen_listings = list(df['id'])
-
-    if not os.path.exists(filepath):
-        with open(filepath, 'w') as fp:
-            pass
     
     textfile = open(filepath, "a")
 
