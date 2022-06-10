@@ -185,7 +185,7 @@ def log_seen_listings(df):
         with open(filepath, 'w') as fp:
             pass
     
-    textfile = open(filepath, "w")
+    textfile = open(filepath, "a")
 
     for element in seen_listings:
         textfile.write(str(element) + "\n")
@@ -306,3 +306,5 @@ def run_search(search_ids=None):
 
         # Log listings sent
         log_seen_listings(df)
+
+df = get_all_query_results('depopScraper/config/config.yml', ['carhartt_chase'])
