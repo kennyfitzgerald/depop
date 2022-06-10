@@ -181,7 +181,7 @@ def log_seen_listings(df):
 
     seen_listings = list(df['id'])
     
-    textfile = open(filepath, "w")
+    textfile = open(filepath, "a")
 
     for element in seen_listings:
         textfile.write(str(element) + "\n")
