@@ -3,7 +3,6 @@
 carhartt_chase:
  what: Carhartt Chase
  sizes: [
-   2-52.6, # size,mens,tops,uk,XL
    2-52.7, # size,mens,tops,uk,XXL
  ]
  sort: newlyListed 
@@ -101,7 +100,7 @@ bronze_cargo:
   
 
 carhartt_madison:
- what: Carhartt Cord
+ what: Carhartt madison
  sizes: [
    2-52.6, # size,mens,tops,uk,XL
    2-52.7, # size,mens,tops,uk,XXL
@@ -110,3 +109,25 @@ carhartt_madison:
  filters:
   min_priceAmount: 2
   max_priceAmount: 40
+
+stussy_trousers:
+ what: stussy
+ sizes: [
+   3-58.5, # size,mens,bottoms,uk L
+   3-58.6, # size,mens,bottoms,uk XL
+ ]
+ sort: newlyListed 
+ filters:
+  min_priceAmount: 2
+  max_priceAmount: 30
+  
+ stussy_t_shirt:
+ what: stussy
+ sizes: [
+   2-52.6, # size,mens,tops,uk,XL
+   2-52.7 # size,mens,tops,uk,XL
+ ]
+ sort: newlyListed 
+ filters:
+  min_priceAmount: 2
+  max_priceAmount: 20
