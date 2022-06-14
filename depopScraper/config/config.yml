@@ -103,7 +103,7 @@ carhartt_madison:
  what: Carhartt madison
  sizes: [
    2-52.6, # size,mens,tops,uk,XL
-   2-52.7, # size,mens,tops,uk,XXL
+   2-52.7 # size,mens,tops,uk,XXL
  ]
  sort: newlyListed 
  filters:
@@ -121,7 +121,7 @@ stussy_trousers:
   min_priceAmount: 2
   max_priceAmount: 30
   
- stussy_t_shirt:
+stussy_t_shirt:
  what: stussy
  sizes: [
    2-52.6, # size,mens,tops,uk,XL
