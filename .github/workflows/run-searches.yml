@@ -2,7 +2,7 @@ name: Run Depop searches
 
 on:
   schedule:
-    - cron: '0/10 7-23 * * *'
+    - cron: '0/30 7-22 * * *'
   workflow_dispatch:
 
 jobs:
