@@ -108,3 +108,13 @@ stussy_t_shirt:
  filters:
   min_priceAmount: 2
   max_priceAmount: 20
+ 
+air_force:
+ what: air force
+ sizes: [
+   6-5.7, # size,mens,footwear,uk 8.5
+ ]
+ sort: newlyListed 
+ filters:
+  min_priceAmount: 2
+  max_priceAmount: 45
