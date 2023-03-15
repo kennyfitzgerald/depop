@@ -11,6 +11,7 @@ jobs:
     env: 
       MY_EMAIL: ${{ secrets.MY_EMAIL }}
       MY_EMAIL_PASSWORD: ${{ secrets.MY_EMAIL_PASSWORD }}
+      API_KEY: ${{ secrets.API_KEY }}
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout
