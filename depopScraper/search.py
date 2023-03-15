@@ -5,6 +5,7 @@ import json
 from urllib.parse import urlencode
 import time
 import random
+import string
 import os
 import smtplib
 from email.mime.multipart import MIMEMultipart
@@ -107,6 +108,8 @@ def get_query_results(url, filter_query_string):
 
     # Convert JSON reponse into JSON object
     results_json = json.loads(page.text)['products']
+    if results_json==[]:
+        return pd.DataFrame()
 
     # Convert into Pandas DataFrame
     results = pd.DataFrame(results_json)
@@ -119,7 +122,7 @@ def get_query_results(url, filter_query_string):
 
     # If no results, pass
     if len(results)==0:
-        return results
+        return pd.DataFrame()
 
     # Add additional columns for total price and listing URL
     results['url'] = URL_LISTING_ENDPOINT + results['slug']
@@ -159,9 +162,10 @@ def get_all_query_results(config_filepath, search_ids):
     for search_id in search_ids:
 
         results_dict[search_id] =  get_query_results(urls_dict[search_id], pd_query_strings[search_id])
-
         # Append column with search string 
         results_dict[search_id]['search_id'] = search_id    
+
+    results_dict = {k:results_dict[k] for k in results_dict.keys() if not results_dict[k].empty}
 
     # Concatenate pandas dataframes and convert datatypes
     results = pd.concat(results_dict.values())
@@ -273,8 +277,40 @@ def df_to_html(df, returned_search_ids):
     
     return html_final
 
+def item_to_html(item):
 
-def run_search(search_ids=None):
+    item_string = string.capwords(item['title']) + ' - £' + item['price']
+    item_url = item['url']
+
+    html = f'<a href="{item_url}">{item_string}</a>'
+
+    return html
+
+def send_to_telegram(message, chatID, apiToken):
+
+    apiURL = f'https://api.telegram.org/bot{apiToken}/sendMessage'
+
+    try:
+        response = requests.post(apiURL, json={'chat_id': chatID, 'text': message, 'parse_mode':'html'})
+        print(response.text)
+    except Exception as e:
+        print(e)
+
+def send_all_to_telegram(df, chatID, apiToken):
+
+    for id in df['id']:
+        item = {}
+        row = df.query(f'id == {id}', engine='python')
+
+        item['title'] = str(row['title'].item())
+        item['url'] = str(row['url'].item())
+        item['price'] = str(row['priceAmount'].item())
+
+        message = item_to_html(item)
+        send_to_telegram(message, chatID, apiToken)
+
+
+def run_search(chatID, apiToken, search_ids=None):
     """ Takes a search config filepath, an emailer config filepath, and search IDs as they appear in the 
         search config file path. Sends an email of filtered results to the email address specified and logs 
         the listing IDs that were sent out  
@@ -298,9 +334,7 @@ def run_search(search_ids=None):
     else:
         # Send Email
         print(f"{results_found} results found. Sending email..")
-        send_email('depopScraper/config/emailer_config.yml', df)
+        send_all_to_telegram(df, chatID, apiToken)
 
         # Log listings sent
         log_seen_listings(df)
-
-df = get_all_query_results('depopScraper/config/config.yml', ['carhartt_chase'])
