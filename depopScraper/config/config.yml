@@ -119,3 +119,16 @@ carhartt_trousers:
  filters:
   min_priceAmount: 2
   max_priceAmount: 40
+ 
+polar_90s:
+ what: polar 90s
+ sizes: [
+   3-58.16,
+   3-58.17,
+   3-58.18,
+   3-58.5
+ ]
+ sort: newlyListed 
+ filters:
+  min_priceAmount: 2
+  max_priceAmount: 80
