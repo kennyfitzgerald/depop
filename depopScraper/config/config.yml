@@ -133,7 +133,7 @@ polar_90s:
   min_priceAmount: 2
   max_priceAmount: 80
 
- polar_surf:
+polar_surf:
  what: polar surf
  sizes: [
    3-58.16,
