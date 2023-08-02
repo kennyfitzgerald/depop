@@ -121,7 +121,7 @@ carhartt_trousers:
   max_priceAmount: 40
  
 polar_90s:
- what: polar 90s
+ what: polar 90
  sizes: [
    3-58.16,
    3-58.17,
@@ -132,3 +132,71 @@ polar_90s:
  filters:
   min_priceAmount: 2
   max_priceAmount: 80
+
+ polar_surf:
+ what: polar surf
+ sizes: [
+   3-58.16,
+   3-58.17,
+   3-58.18,
+   3-58.5
+ ]
+ sort: newlyListed 
+ filters:
+  min_priceAmount: 2
+  max_priceAmount: 80
+
+polar_92s:
+ what: polar 92
+ sizes: [
+   3-58.16,
+   3-58.17,
+   3-58.18,
+   3-58.5
+ ]
+ sort: newlyListed 
+ filters:
+  min_priceAmount: 2
+  max_priceAmount: 80
+
+pass_port_t_shirt:
+ what: pass port
+ sizes: [
+   # 2-52.1, # size,mens,tops,uk,one_size
+   # 2-52.2, # size,mens,tops,uk,XXS
+   # 2-52.3, # size,mens,tops,uk,S
+   # 2-52.4, # size,mens,tops,uk,M
+   # 2-52.5, # size,mens,tops,uk,L
+   2-52.6, # size,mens,tops,uk,XL
+   2-52.7, # size,mens,tops,uk,XXL
+   # 2-52.8, # size,mens,tops,uk,other
+   # 2-52.9, # size,mens,tops,uk,XXS
+   #  2-52.10, # size,mens,tops,uk,XXXL
+   #  2-52.11, # size,mens,tops,uk,XXXXL
+   # 2-54.1, # size,mens,tops,us,one_size
+   # 2-54.2, # size,mens,tops,us,XXS
+   # 2-54.3, # size,mens,tops,us,S
+   # 2-54.4, # size,mens,tops,us,M
+   # 2-54.5, # size,mens,tops,us,L
+   # 2-54.6, # size,mens,tops,us,XL
+   # 2-54.7, # size,mens,tops,us,XXL
+   # 2-54.8, # size,mens,tops,us,other
+   # 2-54.9, # size,mens,tops,us,XXS
+   # 2-54.10, # size,mens,tops,us,XXXL
+   # 2-54.11, # size,mens,tops,us,XXXXL
+   # 2-56.1, # size,mens,tops,eu,one_size
+   # 2-56.2, # size,mens,tops,eu,XXS
+   # 2-56.3, # size,mens,tops,eu,S
+   # 2-56.4, # size,mens,tops,eu,M
+   # 2-56.5, # size,mens,tops,eu,L
+   # 2-56.6, # size,mens,tops,eu,XL
+   # 2-56.7, # size,mens,tops,eu,XXL
+   # 2-56.8, # size,mens,tops,eu,other
+   # 2-56.9, # size,mens,tops,eu,XXS
+   # 2-56.10, # size,mens,tops,eu,XXXL
+   # 2-56.11, # size,mens,tops,eu,XXXXL
+ ]
+ sort: newlyListed 
+ filters:
+  min_priceAmount: 2
+  max_priceAmount: 35
